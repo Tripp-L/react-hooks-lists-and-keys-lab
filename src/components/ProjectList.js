@@ -6,7 +6,17 @@ function ProjectList({ projects }) {
   return (
     <div id="projects">
       <h2>My Projects</h2>
-      <div id="project-list">{/* render ProjectItem components here */}</div>
+      <div id="project-list"> 
+      {/* Map over the projects array and render a ProjectItem component for each project */}
+        {projects.map((project) => (
+          <ProjectItem
+            key={project.id} //Using the id of the project as the key prop
+            name={project.name}
+            about={project.about}
+            technologies={project.technologies}
+          />  
+        ))}
+      </div>
     </div>
   );
 }
